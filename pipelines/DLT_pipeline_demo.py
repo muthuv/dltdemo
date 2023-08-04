@@ -1,6 +1,6 @@
 # Databricks notebook source
 import sys, os
-sys.path.append(os.path.abspath('/Repos/muthuveerappan2007@gmail.com/dltdemo/helpers'))
+sys.path.append(os.path.abspath('/Repos/muthuveerappan2007@gmail.com/dltdemo'))
 
 # COMMAND ----------
 
@@ -10,14 +10,14 @@ from pyspark.sql.types import *
 
 # COMMAND ----------
 
-from constraints import * 
+import helpers.constraints as cn
 
 # COMMAND ----------
 
 @dlt.view(
     name = "vw_student"
 )
-@dlt.expect_all_or_drop(get_constraints('demodb.student',"validdata"))
+@dlt.expect_all_or_drop(cn.get_constraints('demodb.student',"validdata"))
 def vw_student():
     return(
         spark.sql("""
