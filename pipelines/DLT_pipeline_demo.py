@@ -1,6 +1,6 @@
 # Databricks notebook source
 import sys, os
-sys.path.append(os.path.abspath('/Repos/muthuveerappan2007@gmail.com/dltdemo'))
+
 
 # COMMAND ----------
 
